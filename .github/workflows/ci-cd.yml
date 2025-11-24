@@ -87,4 +87,4 @@ jobs:
           POSTGRES_HOST: localhost
           POSTGRES_PORT: 5432
         run: |
-          poetry run pytest --cov=myblog
+          poetry run pytest
