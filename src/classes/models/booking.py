@@ -44,7 +44,7 @@ class Booking(models.Model):
         ]
 
     def __str__(self):
-        return f"{self.user.username} - {self.fitness_class.name}"
+        return f"{self.user.username} - {self.fitness_class.class_type.name}"
 
     def save(self, *args, **kwargs):
         if not self.confirmation_token:

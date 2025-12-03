@@ -46,17 +46,15 @@ class FitnessClassAdmin(admin.ModelAdmin):
 @admin.register(Booking)
 class BookingAdmin(admin.ModelAdmin):
     list_display = [
-        'user', 'fitness_class', 'status', 'is_email_confirmed',
+        'user', 'fitness_class__class_type__name', 'status', 'is_email_confirmed',
         'booked_at', 'confirmed_at'
     ]
-    list_filter = ['status', 'is_email_confirmed', 'fitness_class__class_type']
+    list_filter = ['status', 'is_email_confirmed', 'fitness_class__class_type__name']
     search_fields = [
         'user__username', 'user__email', 'user__first_name', 'user__last_name',
-        'fitness_class__name'
     ]
     list_editable = ['status']
     readonly_fields = ['booked_at', 'confirmed_at', 'cancelled_at', 'confirmation_token']
-    autocomplete_fields = ['user', 'fitness_class']
 
     actions = ['send_confirmation_emails', 'mark_as_attended', 'mark_as_no_show']
 

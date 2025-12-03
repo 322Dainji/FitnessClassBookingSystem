@@ -3,8 +3,9 @@ from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.contrib.auth import authenticate
 from rest_framework_simplejwt.tokens import RefreshToken
-from .models import User
-from .serializers import UserReadSerializer, UserCreateSerializer, UserUpdateSerializer
+from ..models import User
+from ..serializers import (UserReadSerializer, UserCreateSerializer,
+                           UserWithProfileSerializer, UserUpdateSerializer)
 
 
 class UserViewSet(viewsets.ModelViewSet):
@@ -58,3 +59,9 @@ class UserViewSet(viewsets.ModelViewSet):
             {'error': 'Invalid credentials'},
             status=status.HTTP_401_UNAUTHORIZED
         )
+
+    @action(detail=False, methods=['get'])
+    def me_with_profile(self, request):
+        """Get current user with fitness profile"""
+        serializer = UserWithProfileSerializer(request.user)
+        return Response(serializer.data)

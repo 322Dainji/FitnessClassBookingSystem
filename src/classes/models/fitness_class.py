@@ -87,7 +87,7 @@ class FitnessClass(TimestampMixin, models.Model):
         ).exists()
 
     def __str__(self):
-        return f"{self.id} {self.class_type.name}"
+        return f"{self.pk} {self.class_type.name}"
 
     class Meta:
         db_table = 'fitness_classes'
