@@ -12,7 +12,7 @@
 
 ## Overview
 
-A comprehensive fitness class booking system with instructor assignments, user profiles, booking management, and AI-powered workout generation. This Django REST Framework application provides a complete solution for fitness studios to manage classes, instructors, and member bookings with email confirmations.
+A fitness class booking system with instructor assignments, user profiles, booking management, and AI-powered workout generation. This Django REST Framework application provides a solution for fitness studios to manage classes, instructors, and member bookings with confirmations.
 
 ## Features
 
@@ -20,7 +20,7 @@ A comprehensive fitness class booking system with instructor assignments, user p
 - **Class Management**: CRUD operations for fitness classes with instructor assignments
 - **Instructor Management**: Detailed instructor profiles with specializations
 - **User Management**: Role-based users (members, instructors, admins)
-- **Booking System**: Class bookings with email confirmation and cancellation
+- **Booking System**: Class bookings with confirmation and cancellation
 - **Fitness Profiles**: Detailed user fitness metrics and goals tracking
 
 ### Advanced Features
@@ -32,9 +32,9 @@ A comprehensive fitness class booking system with instructor assignments, user p
 ## Technology Stack
 
 - **Backend**: Django 4.2, Django REST Framework
-- **Database**: PostgreSQL/SQLite
+- **Database**: PostgreSQL
 - **Authentication**: JWT & Session-based
-- **LLM Integration**: OpenAI GPT (or mock service for demo)
+- **LLM Integration**: OpenAI GPT, Anthropic
 - **Tools**: Poetry for dependency management
 
 ## Installation & Setup
